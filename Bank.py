@@ -107,15 +107,12 @@ def login_account():
     last_activity_time = time.time()
 
     name = input("Enter account name: ")
-    if name not in accounts:
-        print("Account not found.")
-        return
+    if name in accounts:
+        account = decrypt_data(accounts[name])
 
-    account = decrypt_data(accounts[name])
     password = input("Enter your password: ")
-
-    if not account.verify_password(password):
-        print("Incorrect password.")
+    if name not in accounts or not account.verify_password(password):
+        print("Invalid account name or password.")
         return
 
     print("Login successful!")
