@@ -1,3 +1,6 @@
+# NOTE: This file demonstrates old code that is no longer in use. It is kept for reference purposes only.
+# This file is not used in the final project. The final project uses the file main.py.
+
 import time
 import pickle
 import hashlib
